@@ -336,53 +336,62 @@ ndk::ScopedAStatus Vibrator::compose(const std::vector<CompositeEffect>& composi
     return pImpl->compose(composite, callback);
 }
 
-ndk::ScopedAStatus Vibrator::getSupportedAlwaysOnEffects(std::vector<Effect>* _aidl_return __unused) {
+ndk::ScopedAStatus Vibrator::getSupportedAlwaysOnEffects(std::vector<Effect>* _aidl_return) {
+    if (_aidl_return) _aidl_return->clear();
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::alwaysOnEnable(int32_t id __unused, Effect effect __unused,
-    EffectStrength strength __unused) {
+ndk::ScopedAStatus Vibrator::alwaysOnEnable(int32_t /*id*/, Effect /*effect*/,
+    EffectStrength /*strength*/) {
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::alwaysOnDisable(int32_t id __unused) {
+ndk::ScopedAStatus Vibrator::alwaysOnDisable(int32_t /*id*/) {
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getResonantFrequency(float* resonantFreqHz __unused) {
+ndk::ScopedAStatus Vibrator::getResonantFrequency(float* resonantFreqHz) {
+    if (resonantFreqHz) *resonantFreqHz = 0.0f;
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getQFactor(float* qFactor __unused) {
+ndk::ScopedAStatus Vibrator::getQFactor(float* qFactor) {
+    if (qFactor) *qFactor = 0.0f;
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getFrequencyResolution(float* freqResolutionHz __unused) {
+ndk::ScopedAStatus Vibrator::getFrequencyResolution(float* freqResolutionHz) {
+    if (freqResolutionHz) *freqResolutionHz = 0.0f;
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getFrequencyMinimum(float* freqMinimumHz __unused) {
+ndk::ScopedAStatus Vibrator::getFrequencyMinimum(float* freqMinimumHz) {
+    if (freqMinimumHz) *freqMinimumHz = 0.0f;
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getBandwidthAmplitudeMap(std::vector<float>* _aidl_return __unused) {
+ndk::ScopedAStatus Vibrator::getBandwidthAmplitudeMap(std::vector<float>* _aidl_return) {
+    if (_aidl_return) _aidl_return->clear();
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getPwlePrimitiveDurationMax(int32_t* durationMs __unused) {
+ndk::ScopedAStatus Vibrator::getPwlePrimitiveDurationMax(int32_t* durationMs) {
+    if (durationMs) *durationMs = 0;
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getPwleCompositionSizeMax(int32_t* maxSize __unused) {
+ndk::ScopedAStatus Vibrator::getPwleCompositionSizeMax(int32_t* maxSize) {
+    if (maxSize) *maxSize = 0;
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::getSupportedBraking(std::vector<Braking>* supported __unused) {
+ndk::ScopedAStatus Vibrator::getSupportedBraking(std::vector<Braking>* supported) {
+    if (supported) supported->clear();
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
-ndk::ScopedAStatus Vibrator::composePwle(const std::vector<PrimitivePwle>& composite __unused,
-    const std::shared_ptr<IVibratorCallback>& callback __unused) {
+ndk::ScopedAStatus Vibrator::composePwle(const std::vector<PrimitivePwle>& /*composite*/,
+    const std::shared_ptr<IVibratorCallback>& /*callback*/) {
     return ndk::ScopedAStatus(AStatus_fromExceptionCode(EX_UNSUPPORTED_OPERATION));
 }
 
